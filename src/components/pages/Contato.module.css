@@ -1,0 +1,24 @@
+.contact{
+    width: 100%;
+    background-color: #EDC6BE
+}
+
+.img {
+    width: 8vh;
+    height: auto;
+    margin-right: 20px;
+}
+
+.list {
+    margin-left: 12%;
+    margin-top: 4%;
+}
+
+.item {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    font-size: larger;
+    font-weight: bolder;
+    color: #5e4f4b;
+}

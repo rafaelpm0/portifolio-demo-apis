@@ -1,0 +1,68 @@
+.portifolio{
+    width: 100%;
+    margin: 0;
+    padding-left: 10%;
+    padding-top: 3%;
+    background-color: #EDC6BE;
+    color: #5e4f4b;
+    padding-bottom: 59px;
+}
+
+.img {
+    width: 175px;
+    height: auto;
+    border-radius: 50%;
+}
+
+.introduction{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.intItems {
+   margin-left: 1.5%;
+   font-weight: bolder;
+   font-size: 2em;
+   text-transform: uppercase;
+}
+
+.resume{
+    margin-left: 4.5%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    font-weight: bolder;
+}
+
+.title {
+    font-size: 1.85em;
+    font-weight: bolder;
+    margin-bottom: 1%;
+}
+
+.content{
+    margin-left: 1.5%;
+    margin-right: 10%;
+    text-align: justify;
+    font-size: 1.15em;
+}
+
+.list {
+   list-style: none;  
+   margin-left: 5%;
+   margin-right: 10%;
+}
+
+.liTitle {
+    font-size: 1.50em;
+    font-weight: bolder;
+    margin-bottom: 1%;
+}
+
+.liContent{
+    margin-left: 1.5%;
+    margin-right: 10%;
+    text-align: justify;
+    font-size: 0.8em;
+    font-weight:500;
+}
