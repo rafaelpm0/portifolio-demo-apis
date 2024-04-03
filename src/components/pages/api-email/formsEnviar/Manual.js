@@ -56,7 +56,6 @@ function Manual() {
         }).then(response => {
             setIsLoading(false);
             if (!response.ok) {
-                throw new Error('Erro ao enviar E-mail')
                 setMessage("Erro ao enviar Email");
                 setType('error')
             }

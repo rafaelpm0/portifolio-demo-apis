@@ -1,4 +1,4 @@
-.modeloEmail{
+.tags{
     justify-content: left;
     margin-left: 2%;
 }
@@ -58,7 +58,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 550px;
+    width: 450px;
     border: none;
     border-radius: 10px;
     font-size: 1.2em;
@@ -71,20 +71,14 @@
     margin-bottom: 1%;
 }
 
-.c input,
-.c textarea{
+.b {
+    width: 500px;
+}
+
+.c input{
     background-color: #f09f88aa !important;
-    color: #fffffff2 !important;
+    color: fffffff2 !important;
     cursor: pointer !important;
-
-}
-
-.corpo textarea{
-    height: 180px;
-}
-
-.ass textarea{
-    height: 80px;
 }
 
 .entradas label{
@@ -94,8 +88,7 @@
 
 .entradas input,
 .entradas select,
-.entradas p,
-.entradas textarea {
+.entradas p {
     flex: 1;
     background-color: #5e4f4b60;
     color: #fffffff2;
@@ -106,7 +99,6 @@
     border-radius: 10px;
     padding: 4px;
     padding-left: 2%;
-    cursor: pointer;
     
 }
 
@@ -127,8 +119,9 @@
 }
 
 .button {
+    display: flex;
     justify-content: left;
-    margin-left: 350px;
+    margin-left: 22%;
     padding: 5px;
 }
 
@@ -153,10 +146,11 @@
 
 .editarExcluir{
     display: flex;
-    flex-direction: row;
+    justify-content: space-between;
+    margin: 0% 2% 0% 2%;
 }
-
 .editarExcluir button{
+    margin-right: 2%;
     background: none;
     border: none;
 }
@@ -164,10 +158,3 @@
 .editarExcluir button:hover{
     color: #FFBB33;
 }
-
-.e{
-    margin-left: 40px;
-    padding: 2px;
-}
-
-

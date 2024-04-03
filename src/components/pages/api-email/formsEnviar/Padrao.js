@@ -170,20 +170,23 @@ function Padrao({ info }) {
                     });
                 });
             };
+         
             if (Object.keys(data.tags).length !== 0) {
                 Object.keys(novoText).forEach(chave => {
                     Object.keys(data.tags).forEach(nome => {
                         let valor = data.tags[nome];
-                        let valorTag = contentTags[contentTags.findIndex(obj => obj.nome === nome && obj.referencia === valor)]['retorno'];
+                        let valorTag = contentTags[contentTags.findIndex(obj => obj.nome === nome && String(obj.referencia) === valor)]['retorno'];
                         novoText[chave] = novoText[chave].replace(`{${nome}}`, valorTag);
                     });
                 });
             }
+         
             setText(novoText);
         };
 
         alterText();
     }, [data]);
+
 
     function handleTagChange(e) {
         const [nome, valor, retorno] = e.target.value.split(',');
@@ -213,8 +216,11 @@ function Padrao({ info }) {
         }));
     }
 
-    function resetMessage(){
-        setMessage('');
+    function resetMessage() {
+        const timer = setTimeout(() => {
+            setMessage("");
+        }, 2900);
+        return () => clearTimeout(timer);
     }
 
     function sendEmail() {   
@@ -223,6 +229,7 @@ function Padrao({ info }) {
         if ((data.remetente === '' || Object.keys(data.tags).length !== tags.length)) {
             setMessage("Preencha os campos obrigatórios");
             setType("error");
+            resetMessage();
             return;
         }
 
@@ -242,16 +249,18 @@ function Padrao({ info }) {
                     setMessage("Erro ao enviar Email");
                     setType('error');
                 }
-                console.log('Enviado');
                 setMessage("Email enviado com sucesso");
                 setType("success");
+                resetMessage();
             })
             .catch(error => {
-                console.log('Erro no catch: ', error);
+                resetMessage();
                 setLoading(false);
                 setMessage("Erro ao enviar Email");
                 setType('error');
             });
+           
+
     }
 
     return (
