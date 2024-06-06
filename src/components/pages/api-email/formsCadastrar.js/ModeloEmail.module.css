@@ -58,7 +58,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 550px;
+    width: 560px;
     border: none;
     border-radius: 10px;
     font-size: 1.2em;
@@ -110,8 +110,19 @@
     
 }
 
+.entradas li{
+    list-style-type: none;
+}
+
 .entradas select {
     border: 2px solid #5e4f4b65;
+}
+
+.tags{
+    justify-content: left;
+}
+.tags li{
+    margin-left: 1%;
 }
 
 .message{
@@ -125,16 +136,14 @@
     font-size: 1.5em;
     opacity: 70%;
 }
-
 .button {
     justify-content: left;
     margin-left: 350px;
     padding: 5px;
 }
-
 .button button {
-    width: 100px;
-    height: 50px;
+    width: 6em;
+    height: 1.8em;
     border-radius: 10px;
     border: 2px solid #7f655e;
     background-color: #7f655e95;
@@ -145,6 +154,14 @@
 
 .button button:hover{
     color: #FFBB33;
+}
+
+.bSize {
+    margin-left: 0;
+}
+.bSize button{
+    font-size: 0.9em;
+    margin-left: 1%;
 }
 
 .d {
@@ -170,4 +187,30 @@
     padding: 2px;
 }
 
+.mostrarTags{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    text-align-last: center;
+}
+
+.mostrarTags div{
+    justify-content: center;
+    margin-right: 2%;
+}
+
+.mostrarTags p, .mostrarTags button{
+    font-size: 1.5em;
+    margin-bottom: 3%;
+    padding: 2%;
+    background-color: #f09f88;
+    border: 2px solid #7f655e;
+    color: #FFF;
+    border-radius: 10px;  
+    font-weight: bolder;
+}
+
+.mostrarTags button:hover {
+    color: #FFBB33;
+}
 

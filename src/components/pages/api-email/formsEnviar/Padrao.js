@@ -141,6 +141,7 @@ function Padrao({ info }) {
                     return response.json();
                 }));
 
+                console.log(responses)
                 setContentTags(responses.flat());
 
             } catch (err) {
@@ -163,10 +164,10 @@ function Padrao({ info }) {
 
             if (idRemetente !== "") {
                 let remetente = remetentes.filter(item => item.id == idRemetente)[0];
-
+                console.log(remetente)
                 Object.keys(novoText).forEach(chave => {
                     Object.keys(remetente).forEach(valor => {
-                        novoText[chave] = novoText[chave].replace(`{remetente.${valor}}`, remetente[valor]);
+                       novoText[chave] = novoText[chave].replace(`{remetente.${valor}}`, remetente[valor]);
                     });
                 });
             };

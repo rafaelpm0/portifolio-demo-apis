@@ -14,17 +14,16 @@ function Tags() {
     const [isLoading, setIsLoading] = useState(false);
     const [edite, setEdite] = useState(false);
     const [editeButton, setEditeButton] = useState(false);
-    const [alterRementente, setAlterRementente] = useState({});
     const [message, setMessage] = useState('');
     const [type, setType] = useState("");
-    const [modeloEmail, setModeloEmail] = useState({}); 
+    const [modeloEmail, setModeloEmail] = useState({});
+    const [tags, setTags] = useState([]);
+    const [addtags, setAddTags] = useState([])
     const [contentModeloEmail, setContentModeloEmail] = useState([]);
     const [currentModeloEmail, setCurrentModeloEmail] = useState();
     const [alterModeloEmail, setAlterModeloEmail] = useState({});
-
-    function resetMessage() {
-        setMessage('');
-    }
+    const [tagsEmail, setTagsEmail] = useState({})
+    
 
     function handleInExOnChange(e) {
         setIncluirExcluir(e.target.value === 'true');
@@ -59,11 +58,11 @@ function Tags() {
         let a = modeloEmail.hasOwnProperty('nome');
         let b = modeloEmail.hasOwnProperty('titulo');
         let c = modeloEmail.hasOwnProperty('corpo');
+        let d = modeloEmail.hasOwnProperty('assinatura');
 
-
-        if (!((a && b) && c)) {
+        if ((!(a && b && c && d))) {
             setType("error");
-            setMessage("Campos obrigatórios: Nome, Titulo e Corpo.");
+            setMessage("Campos obrigatórios: Nome, Titulo, Corpo e Assinatura.");
             resetMessage();
             return;
         }
@@ -77,31 +76,71 @@ function Tags() {
             },
             body: JSON.stringify(modeloEmail)
         }).then(resp => {
-            setIsLoading(false);
+            return resp.json();
+        }).then(resp => {
+            return Promise.all(handleIncluirTag(resp.id, addtags));
+        }).then(resp =>{
+            setIsLoading(false);  
             setType('success');
-            setMessage('Remetente incluido com sucesso');
-
+            setMessage('Email modelo incluido com sucesso');
+            resetMessage();    
         })
+                
             .catch(err => {
                 setIsLoading(false);
                 setType('error');
-                setMessage('Erro na inclusão do remetente');
+                setMessage('Erro na inclusão do Modelo de Email');
+                resetMessage();
 
             });
     }
 
+
+function handleIncluirTag(idEmail, lista) {
+        const promises = lista.map(item =>
+            new Promise((resolve, reject) => {
+                fetch(`${conf.url}/insert/ModeloEmail_tag`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({id_modeloEmail: idEmail, nome_tag: item})
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Erro na solicitação');
+                    }
+                    resolve(); // Resolva a Promise se a solicitação for bem-sucedida
+                })
+                .catch(error => reject(error)); // Rejeita a Promise se houver erro na solicitação
+            })
+        );
+        return promises;
+    }
+    
     useEffect(() => {
 
-
-        const fetchRemet = async () => {
+        const fetchData = async () => {
 
             try {
                 setIsLoading(true);
                 let resp = await fetch(`${conf.url}/search/modeloEmail`)
                 let data = await resp.json();
-                
                 setContentModeloEmail(data)
+
+
+                resp = await fetch(`${conf.url}/search/modeloEmail_tag`);
+                data = await resp.json();
+
+                setTagsEmail(data)
+
+                resp = await fetch(`${conf.url}/search/tagEmpty`);
+                data = await resp.json();
+                setTags(data);
+
+
                 setIsLoading(false);
+
             }
             catch (err) {
                 setIsLoading(false);
@@ -110,9 +149,8 @@ function Tags() {
 
             }
         }
-        if (incluirExcluir === false) {
-            fetchRemet();
-        }
+
+        fetchData();
     }, [incluirExcluir]);
 
     function handleCurrentModEmailChange(e) {
@@ -122,7 +160,7 @@ function Tags() {
             setEdite(false)
             setAlterModeloEmail(contentModeloEmail[contentModeloEmail.findIndex((item) => item.id == e.target.value)]);
         } else {
-            setAlterRementente("");
+            setModeloEmail("");
         }
     };
 
@@ -213,17 +251,36 @@ function Tags() {
                     setMessage("Erro ao apagar o Modelo Email");
                 }
             } catch (err) {
-                console.log(err)
                 setIsLoading(false);
                 setType('error');
                 setMessage("Erro ao apagar a Modelo Email!");
             }
         }
         handleDelete();
-
     }
 
-    console.log(alterModeloEmail)
+    function onClickAddTag(e) {
+        let elemento = document.getElementById("tags")
+
+        if ((elemento.value !== "") && !addtags.includes(elemento.value)) {
+            setAddTags(prevData => [...prevData,
+            elemento.value])
+        } else {
+            if(elemento.value !== ""){
+            setType('error');
+            setMessage("Tag já incluida!")
+            resetMessage();
+            } else {
+                setType('error');
+            setMessage("Selecione uma Tag!")
+            resetMessage();
+            }
+        }
+
+    }
+    function onClickDeleteAddTag(item) {
+        setAddTags(addtags.filter(element => element != item));
+    }
 
     return (
         <div className={styles.modeloEmail}>
@@ -257,29 +314,57 @@ function Tags() {
                 <div className={styles.alinhamentoEntradas}>
                     <p className={styles.entradas}>Informe: </p>
                     <div className={styles.entradas}>
-                        <label htmlFor="">Nome: </label>
+                        <label htmlFor="nome">Nome: </label>
                         <input type="text" name="nome" onChange={handleInserMEOnChange} value={modeloEmail.nome} />
                     </div>
                     <div className={styles.entradas}>
-                        <label htmlFor="">Titulo: </label>
+                        <label htmlFor="titulo">Titulo: </label>
                         <input type="text" name="titulo" onChange={handleInserMEOnChange} value={modeloEmail.titulo} />
                     </div>
                     <div className={`${styles.entradas} ${styles.corpo}`}>
-                        <label htmlFor="">Corpo: </label>
+                        <label htmlFor="corpo">Corpo: </label>
                         <textarea name="corpo" onChange={handleInserMEOnChange} value={modeloEmail.corpo} />
                     </div>
                     <div className={`${styles.entradas} ${styles.ass}`}>
-                        <label htmlFor="">Assinatura: </label>
-                        <textarea  name="assinatura" onChange={handleInserMEOnChange} value={modeloEmail.assinatura} />
+                        <label htmlFor="assinatura">Assinatura: </label>
+                        <textarea name="assinatura" onChange={handleInserMEOnChange} value={modeloEmail.assinatura} />
                     </div>
                     <div className={styles.entradas}>
-                        <label htmlFor="">URL Assinatura: </label>
+                        <label htmlFor="url_imagem">URL Assinatura: </label>
                         <input type="text" name="url_imagem" onChange={handleInserMEOnChange} value={modeloEmail.imagem_url} />
                     </div>
+                    <div className={`${styles.entradas} ${styles.button} ${styles.bSize}`}>
+                        <label htmlFor="tags">Tags: </label>
+                        <select name="tags" id="tags" >
+                            <option value={""}>Selecione uma tag</option>
+                            {
+                                tags.map(element => (
+                                    <option value={element.nome}>{element.nome}</option>
+                                ))
+                            }
+
+                        </select>
+                        <button onClick={onClickAddTag} className={styles}>Adicionar</button>
+                    </div>
+                    <div className={styles.mostrarTags}>
+                    {
+                            addtags.map(element => (
+                                <div>
+                                    <p>{element}</p>
+                                    <button onClick={() => onClickDeleteAddTag(element)}>Apagar</button>
+                                </div>
+
+                            ))
+                        }
+                    </div>
+
                     <div className={styles.button}>
                         <button onClick={handleIncluirModeloEmail}>Enviar</button>
                     </div>
+
+
                 </div>
+
             )}
 
             {!incluirExcluir && (
@@ -352,11 +437,22 @@ function Tags() {
                                             )
                                             : (
                                                 <div>
-                                                    <p className={`${styles.entradas} ${styles.b}`}>Nome: {item.nome}</p>
-                                                    <p className={`${styles.entradas} ${styles.b}`}>Titulo: {item.titulo}</p>
-                                                    <p className={`${styles.entradas} ${styles.b}`}>Corpo: {item.corpo}</p>
-                                                    <p className={`${styles.entradas} ${styles.b}`}>Assinatura: {item.assinatura}</p>
-                                                    <p className={`${styles.entradas} ${styles.b}`}>Url Imagem: {item.imagel_url}</p>
+                                                    <p className={styles.entradas}>Nome: {item.nome}</p>
+                                                    <p className={styles.entradas}>Titulo: {item.titulo}</p>
+                                                    <p className={styles.entradas}>Corpo: {item.corpo}</p>
+                                                    <p className={styles.entradas}>Assinatura: {item.assinatura}</p>
+                                                    <p className={styles.entradas}>Url Imagem: {item.imagel_url}</p>
+                                                    <ul className={`${styles.entradas} ${styles.tags}`}>Tags:
+                                                        {
+
+                                                            tagsEmail.map((element, index) => {
+                                                                if (parseInt(currentModeloEmail, 10) === element.id_modeloEmail) {
+                                                                    return <li key={index}>{element.nome_tag} | </li>;
+                                                                }
+                                                            })
+                                                        }
+
+                                                    </ul>
                                                 </div>
                                             )
                                         }
@@ -382,5 +478,4 @@ function Tags() {
         </div>
     );
 }
-
 export default Tags;

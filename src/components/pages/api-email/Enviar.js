@@ -7,7 +7,7 @@ import conf from '../../../conf';
 
 function Enviar() {
 
-    const [modelo, setModelo] = useState() //carrga a lista da tabela ModeloEmail - texto, tags, id
+    const [modelo, setModelo] = useState({}) //carrga a lista da tabela ModeloEmail - texto, tags, id
     const [isLoading, setIsLoading] = useState(true)
     const [error, setError] = useState(false) // ainda não adicionei funcao para
 
@@ -41,7 +41,7 @@ function Enviar() {
                 try {
                     const response = await fetch(`${conf.url}/search/modeloEmail`);
                     const responseData = await response.json()
-                    setModelo(responseData.rows)
+                    setModelo(responseData)
                 } catch (err) {
                     setError(true);
                 } finally {
@@ -55,7 +55,7 @@ function Enviar() {
 
     }, [])
 
-
+    console.log(modelo)
     if (isLoading) {
         return (
             <div className={styles.loading}>

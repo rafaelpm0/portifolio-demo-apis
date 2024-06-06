@@ -54,7 +54,7 @@
 }
 .sub_optionsB {
   position: absolute;
-  top: 15%;
+  top: 5%;
   left: 105%;
   display: flex;
   flex-direction: column;
