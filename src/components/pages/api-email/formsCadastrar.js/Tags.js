@@ -108,7 +108,11 @@ function Tags() {
 
     function atualizarNametags(data){
                 let list = [];
-                data.map((item) => { if (!list.includes(item.nome)) { list.push(item.nome) } })
+                data.forEach((item) => {
+                    if (!list.includes(item.nome)) {
+                      list.push(item.nome);
+                    }
+                  });
                 setNameTags(list);
     }
 

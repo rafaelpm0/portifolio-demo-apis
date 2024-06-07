@@ -158,7 +158,7 @@ function handleIncluirTag(idEmail, lista) {
         setEdite(false);
         if (e.target.value !== "") {
             setEdite(false)
-            setAlterModeloEmail(contentModeloEmail[contentModeloEmail.findIndex((item) => item.id == e.target.value)]);
+            setAlterModeloEmail(contentModeloEmail[contentModeloEmail.findIndex((item) => item.id === parseInt(e.target.value, 10))]);
         } else {
             setModeloEmail("");
         }
@@ -279,7 +279,7 @@ function handleIncluirTag(idEmail, lista) {
 
     }
     function onClickDeleteAddTag(item) {
-        setAddTags(addtags.filter(element => element != item));
+        setAddTags(addtags.filter(element => element !== item));
     }
 
     return (
