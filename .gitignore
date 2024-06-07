@@ -4,7 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
-node_modules/react-scripts/config/webpackDevServer.config.js
+
 # testing
 /coverage
 
