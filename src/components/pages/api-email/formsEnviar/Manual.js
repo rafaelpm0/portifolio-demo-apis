@@ -26,7 +26,7 @@ function Manual() {
     const [type, setType] = useState();
 
     function handleModelChange(e) {
-        if (e.target.value == 'true') {
+        if (e.target.value === 'true') {
             setModel(true);
         } else {
             setModel(false);
