@@ -196,7 +196,7 @@ function handleIncluirTag(idEmail, lista) {
                         body: JSON.stringify(alterModeloEmail)
                     });
                 contentModeloEmail.forEach((item, index) => {
-                    if (item.id == alterModeloEmail.id) {
+                    if (item.id === alterModeloEmail.id) {
                         let obj = [...contentModeloEmail];
                         obj[index] = alterModeloEmail;
                         setContentModeloEmail(obj);

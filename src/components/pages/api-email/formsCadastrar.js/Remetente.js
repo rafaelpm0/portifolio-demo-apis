@@ -122,7 +122,7 @@ function Tags() {
         setEdite(false);
         if (e.target.value !== "") {
             setEdite(false)
-            setAlterRementente(contentRemet[contentRemet.findIndex((item) => item.id == e.target.value)]);
+            setAlterRementente(contentRemet[contentRemet.findIndex((item) => item.id === parseInt(e.target.value, 10))]);
         } else {
             setAlterRementente("");
         }
@@ -162,7 +162,7 @@ function Tags() {
                         body: JSON.stringify(alterRementente)
                     });
                 contentRemet.forEach((item, index) => {
-                    if (item.id == alterRementente.id) {
+                    if (item.id === alterRementente.id) {
                         let obj = [...contentRemet];
                         obj[index] = alterRementente;
                         setContentRemet(obj);

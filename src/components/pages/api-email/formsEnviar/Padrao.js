@@ -63,7 +63,7 @@ function Padrao({ info }) {
     }, [model]);
 
     function handleModelChange(e) {
-        if (e.target.value == 'true') {
+        if (e.target.value === 'true') {
             setModel(true);
         } else {
             setModel(false);
@@ -162,7 +162,7 @@ function Padrao({ info }) {
             let idRemetente = data.remetente;
 
             if (idRemetente !== "") {
-                let remetente = remetentes.filter(item => item.id == idRemetente)[0];
+                let remetente = remetentes.filter(item => item.id === idRemetente)[0];
                 console.log(remetente)
                 Object.keys(novoText).forEach(chave => {
                     Object.keys(remetente).forEach(valor => {

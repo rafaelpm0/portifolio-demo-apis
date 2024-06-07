@@ -56,9 +56,9 @@ function Tags() {
 
     function handleIncluirTag() {
 
-        if (((Object.keys(tag).length !== 2) && (tagRetorno == false))   /*Regra para tag, um campo e não pode ser repetido. Regra para retorno
+        if (((Object.keys(tag).length !== 2) && (tagRetorno === false))   /*Regra para tag, um campo e não pode ser repetido. Regra para retorno
         2 campos apenas*/
-        || ((Object.keys(tag).length !== 1) && (tagRetorno == true))) {
+        || ((Object.keys(tag).length !== 1) && (tagRetorno === true))) {
             setType("error");
             setMessage("Preencha todos os campos!");
             resetMessage();
@@ -168,7 +168,7 @@ function Tags() {
                         body: JSON.stringify(alterTag)
                     });
                 contentTag.forEach((item, index) => {
-                    if (item.referencia == alterTag.referencia) {
+                    if (item.referencia === alterTag.referencia) {
                         let obj = [...contentTag];
                         obj[index] = alterTag;
                         setContentTag(obj);
@@ -206,7 +206,7 @@ function Tags() {
                 }
             }
 
-            if((tag.retorno == null) && (cont > 1)){
+            if((tag.retorno === null) && (cont > 1)){
                 setType('error');
                 setMessage("Exclua os demais!");
                 resetMessage();
