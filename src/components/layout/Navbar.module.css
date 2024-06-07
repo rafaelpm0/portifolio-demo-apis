@@ -49,15 +49,16 @@
   position: absolute;
   top: 100%;
   left: 0%;
-  display: flex;
+  display: block;
   flex-direction: column;
 }
 .sub_optionsB {
   position: absolute;
-  top: 5%;
-  left: 105%;
-  display: flex;
+  top: 0%;
+  left: 100%;
+  display: block;
   flex-direction: column;
+  padding-left: 3%;
 }
 .sub_option {
   color: #5E4F4B;

@@ -141,7 +141,6 @@ function Padrao({ info }) {
                     return response.json();
                 }));
 
-                console.log(responses)
                 setContentTags(responses.flat());
 
             } catch (err) {
@@ -328,7 +327,7 @@ function Padrao({ info }) {
                                         {
 
                                             contentTags
-                                                .filter((element) => element.nome === item.nome_tag)
+                                                .filter((element) => (element.nome === item.nome_tag) && (element.retorno !== null))
                                                 .map(subItem => (
                                                     <option key={subItem.referencia} value={[subItem.nome, subItem.referencia, subItem.retorno]}>{
                                                         subItem.retorno
@@ -362,9 +361,9 @@ function Padrao({ info }) {
                 <div>
                     <p className={styles.right} htmlFor="">Represetacao do email a ser enviado: </p>
                     <div className={`${styles.right} content`}> {/* lado direito da tela */}
-                        <p>{text.titulo}<br /><br />{text.corpo}<br /><br /><br />
+                        <pre>{text.titulo}<br /><br />{text.corpo}<br /><br /><br />
                             <img src={info.imagem_url} alt="image signature" />
-                            <br />{text.assinatura}</p>
+                            <br />{text.assinatura}</pre>
                     </div>
                 </div>
 
