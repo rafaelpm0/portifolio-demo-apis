@@ -20,7 +20,6 @@ function Padrao({ info }) {
     const [model, setModel] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
     const [remetentes, setRemetentes] = useState([]);
-    const [erro, setError] = useState('');
     const [tags, setTags] = useState([]);
     const [contentTags, setContentTags] = useState([]);
     const [text, setText] = useState({
@@ -91,7 +90,7 @@ function Padrao({ info }) {
             corpo: info.corpo,
             assinatura: info.assinatura
         });
-    }, [info.id]);
+    }, [info.id, info.titulo, info.corpo, info.assinatura]);
 
     useEffect(() => {
 
@@ -102,7 +101,7 @@ function Padrao({ info }) {
                 const responseData = await response.json();
                 setRemetentes(responseData);
             } catch (err) {
-                setError(true);
+                console.log(err)
             } finally {
                 setIsLoading(false);
             }
@@ -122,7 +121,7 @@ function Padrao({ info }) {
                 const responseData = await response.json();
                 setTags(responseData.rows);
             } catch (err) {
-                setError(true);
+                console.log(err)
             } finally {
                 setIsLoading(false);
             }
@@ -144,7 +143,7 @@ function Padrao({ info }) {
                 setContentTags(responses.flat());
 
             } catch (err) {
-                setError(true);
+                console.log(err)
             }
         };
 
@@ -185,11 +184,11 @@ function Padrao({ info }) {
         };
 
         alterText();
-    }, [data]);
+    }, [data, contentTags, info.assinatura, info.corpo, info.titulo, remetentes]);
 
 
     function handleTagChange(e) {
-        const [nome, valor, retorno] = e.target.value.split(',');
+        const [nome, valor] = e.target.value.split(',');
 
         if (valor === '') {
             let newObj = { ...data };
@@ -362,7 +361,7 @@ function Padrao({ info }) {
                     <p className={styles.right} htmlFor="">Represetacao do email a ser enviado: </p>
                     <div className={`${styles.right} content`}> {/* lado direito da tela */}
                         <pre>{text.titulo}<br /><br />{text.corpo}<br /><br /><br />
-                            <img src={info.imagem_url} alt="image signature" />
+                            <img src={info.imagem_url} alt="signature" />
                             <br />{text.assinatura}</pre>
                     </div>
                 </div>
