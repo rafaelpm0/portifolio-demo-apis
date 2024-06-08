@@ -6,4 +6,5 @@ const emailPadrao = {
     pass: 'zobxlpnljrvhxnmz'
 };
 
+
 export default {url, emailPadrao};
