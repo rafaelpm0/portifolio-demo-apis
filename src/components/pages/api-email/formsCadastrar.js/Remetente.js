@@ -24,11 +24,6 @@ function Tags() {
     const [message, setMessage] = useState('');
     const [type, setType] = useState();
 
-
-    function resetMessage() {
-        setMessage('');
-    }
-
     function handleInExOnChange(e) {
         setIncluirExcluir(e.target.value === 'true');
     }

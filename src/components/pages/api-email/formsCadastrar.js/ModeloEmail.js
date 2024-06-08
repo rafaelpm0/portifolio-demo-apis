@@ -448,6 +448,8 @@ function handleIncluirTag(idEmail, lista) {
                                                             tagsEmail.map((element, index) => {
                                                                 if (parseInt(currentModeloEmail, 10) === element.id_modeloEmail) {
                                                                     return <li key={index}>{element.nome_tag} | </li>;
+                                                                }else{
+                                                                    return null
                                                                 }
                                                             })
                                                         }

@@ -6,5 +6,5 @@ const emailPadrao = {
     pass: 'zobxlpnljrvhxnmz'
 };
 
-
-export default {url, emailPadrao};
+const exportar = {url, emailPadrao}
+export default exportar;

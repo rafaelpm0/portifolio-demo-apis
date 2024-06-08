@@ -9,8 +9,6 @@ function Enviar() {
 
     const [modelo, setModelo] = useState({}) //carrga a lista da tabela ModeloEmail - texto, tags, id
     const [isLoading, setIsLoading] = useState(true)
-    const [error, setError] = useState(false) // ainda não adicionei funcao para
-
     const [sendModel, setSendModel] = useState({}) // Carrega a tabela do ModeloEmail do select
     const [modeloOptions, setModeloOptions] = useState("") // ira receber "" para iniciar, livre para tipo livre de envio e Object para demais opcoes de envio
 
@@ -35,27 +33,22 @@ function Enviar() {
 
     useEffect(() => {
 
-        const delay = 1000
-        const timerId = setTimeout(() => {
+
             const fetchData = async () => {
                 try {
                     const response = await fetch(`${conf.url}/search/modeloEmail`);
                     const responseData = await response.json()
                     setModelo(responseData)
                 } catch (err) {
-                    setError(true);
+                    console.log(err)
                 } finally {
                     setIsLoading(false)
                 }
 
             }
             fetchData();
-        }, delay)
-        return () => clearTimeout(timerId);
+        }, [])
 
-    }, [])
-
-    console.log(modelo)
     if (isLoading) {
         return (
             <div className={styles.loading}>
