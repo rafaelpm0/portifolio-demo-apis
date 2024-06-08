@@ -28,9 +28,9 @@ function Padrao({ info }) {
         corpo: info.corpo,
         assinatura: info.assinatura
     });
-    const [loading, setLoading] = useState();
-    const [message, setMessage] = useState();
-    const [type, setType] = useState();
+    const [loading, setLoading] = useState("");
+    const [message, setMessage] = useState("");
+    const [type, setType] = useState("");
 
     useEffect(() => {
 
@@ -113,7 +113,7 @@ function Padrao({ info }) {
 
     }, []);
 
-
+    console.log(remetentes)
     useEffect(() => {
         const fetchTags = async () => {
             setIsLoading(true);
@@ -162,7 +162,7 @@ function Padrao({ info }) {
             let idRemetente = data.remetente;
 
             if (idRemetente !== "") {
-                let remetente = remetentes.filter(item => item.id === idRemetente)[0];
+                let remetente = remetentes.filter(item => item.id === parseInt(idRemetente, 10))[0];
                 console.log(remetente)
                 Object.keys(novoText).forEach(chave => {
                     Object.keys(remetente).forEach(valor => {
@@ -243,7 +243,7 @@ function Padrao({ info }) {
             body: JSON.stringify(data)
         })
             .then(response => {
-                setLoading(false);
+                setLoading(false); 
                 if (!response.ok) {
                     setLoading(false);
                     setMessage("Erro ao enviar Email");
