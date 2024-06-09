@@ -10,8 +10,10 @@ import Enviar from './components/pages/api-email/Enviar';
  
 function App() {
   return (
-    <Router>
-    </Router>
+    
+    <div className="App">
+    <h1>Hello World</h1>
+  </div>
 
   );
 }
