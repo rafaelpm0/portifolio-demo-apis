@@ -12,9 +12,7 @@ function App() {
   return (
     <Router>
       <NavBar />
-      <Container customClass='minHeight'>
-  
-      </Container>
+     
       <Footer/>
     </Router>
 
