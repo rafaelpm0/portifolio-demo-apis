@@ -11,8 +11,6 @@ import Enviar from './components/pages/api-email/Enviar';
 function App() {
   return (
     <Router>
-     
-      <Footer/>
     </Router>
 
   );
