@@ -13,13 +13,7 @@ function App() {
     <Router>
       <NavBar />
       <Container customClass='minHeight'>
-      <Routes>
-        <Route path="/" element={<Portifolio />} />
-        <Route path="/contato" element={<Contato />} />
-        <Route path='/instrucoes' element={<Instrucoes/>} />
-        <Route path='/cadastrar' element={<Cadastrar/>} />
-        <Route path='/enviar' element={<Enviar/>} />
-      </Routes>
+  
       </Container>
       <Footer/>
     </Router>
