@@ -5,7 +5,6 @@ import Portifolio from './components/pages/Portifolio';
 import Contato from './components/pages/Contato';
 import Container from './components/layout/Container';
 import Instrucoes from './components/pages/api-email/Intrucoes';
-import Cadastrar from './components/pages/api-email/Cadastrar.js';
 import Enviar from './components/pages/api-email/Enviar';
  
 function App() {
@@ -17,7 +16,6 @@ function App() {
         <Route path="/" element={<Portifolio />} />
         <Route path="/contato" element={<Contato />} />
         <Route path='/instrucoes' element={<Instrucoes/>} />
-        <Route path='/cadastrar' element={<Cadastrar/>} />
         <Route path='/enviar' element={<Enviar/>} />
       </Routes>
       </Container>

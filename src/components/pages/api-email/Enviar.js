@@ -7,7 +7,7 @@ import conf from '../../../conf';
 
 function Enviar() {
 
-    const [modelo, setModelo] = useState({}) //carrga a lista da tabela ModeloEmail - texto, tags, id
+    const [modelo, setModelo] = useState([]) //carrga a lista da tabela ModeloEmail - texto, tags, id
     const [isLoading, setIsLoading] = useState(true)
     const [sendModel, setSendModel] = useState({}) // Carrega a tabela do ModeloEmail do select
     const [modeloOptions, setModeloOptions] = useState("") // ira receber "" para iniciar, livre para tipo livre de envio e Object para demais opcoes de envio
