@@ -113,7 +113,7 @@ function Tags() {
             */
     }
 
-    function atualizarNametags(data){
+    function atualizarNametags(data) {
         /*
                 let list = [];
                 data.forEach((item) => {
@@ -426,8 +426,8 @@ function Tags() {
 
                 </div>
             )}
-
-            <div className={styles.message}>
+            {/*
+ <div className={styles.message}>
                 {
                     isLoading && (
                         <Loading />
@@ -436,6 +436,8 @@ function Tags() {
             <div className={styles.message}>
                 <Message msg={message} type={type} reset={resetMessage} />
             </div>
+
+            */}
 
         </div>
     );
