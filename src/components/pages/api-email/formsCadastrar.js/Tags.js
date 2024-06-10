@@ -199,7 +199,7 @@ function Tags() {
         pTag();
     }
 
-    function handleDeleteOnClick(tag) {
+    function handleDeleteOnClick(tag) { /*
         setMessage("");
         setType("");
 
@@ -251,7 +251,7 @@ function Tags() {
         }
         handleDelete();
 
-
+        */
     }
     return (
         <div className={styles.tags}>
