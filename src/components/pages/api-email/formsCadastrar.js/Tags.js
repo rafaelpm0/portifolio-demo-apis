@@ -14,7 +14,7 @@ function Tags() {
     const [tagRetorno, setTagRetorno] = useState(true);
     const [isLoading, setIsLoading] = useState(false);
     const [message, setMessage] = useState('');
-    const [type, setType] = useState();
+    const [type, setType] = useState("");
     const [tag, setTag] = useState({});
     const [nameTags, setNameTags] = useState([]);
     const [contentTag, setContentTag] = useState([]);
@@ -22,15 +22,19 @@ function Tags() {
     const [alterTag, setAlterTag] = useState({});
 
     function handleInExOnChange(e) {
-        setIncluirExcluir(e.target.value === 'true');
+        /*
+        setIncluirExcluir(e.target.value === 'true');*/
     }
 
     function handleTagRetOnChange(e) {
+        /*
         setTagRetorno(e.target.value === 'true');
         setTag({});
+        */
     }
 
     function handleTaInsertgOnChange(e) {
+        /*
         let { name, value } = e.target;
 
 
@@ -44,7 +48,7 @@ function Tags() {
                 [name]: value
             }));
         }
-
+        */
     }
 
     function resetMessage() {
