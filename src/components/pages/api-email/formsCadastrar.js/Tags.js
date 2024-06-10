@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import conf from '../../../../conf'
 import Loading from "../../../layout/Loading";
 import Message from "../../../layout/Message";
+import { BsFillPencilFill } from "react-icons/bs";
 import { RiPencilFill } from "react-icons/ri";
 import { FaTrashAlt } from "react-icons/fa";
 import { FaCheckCircle } from "react-icons/fa";
@@ -379,7 +380,7 @@ function Tags() {
 
                                         <div className={styles.editarExcluir}>
                                             <button onClick={() => handleEditeOnClick(item)}>
-                                                <RiPencilFill  size={20} />
+                                                <BsFillPencilFill  size={20} />
                                             </button>
                                             <button onClick={() => handleDeleteOnClick(item)}>
                                                 <FaTrashAlt 
