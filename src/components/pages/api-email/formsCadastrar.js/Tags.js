@@ -3,8 +3,10 @@ import { useEffect, useState } from "react";
 import conf from '../../../../conf'
 import Loading from "../../../layout/Loading";
 import Message from "../../../layout/Message";
-import { FaTrashAlt } from "react-icons/fa";
+import { MdModeEdit, } from "react-icons/md";
+
 import { FaCheckCircle } from "react-icons/fa";
+import { IoIosRemoveCircle } from "react-icons/io";
 
 function Tags() {
 
@@ -378,11 +380,10 @@ function Tags() {
 
                                         <div className={styles.editarExcluir}>
                                             <button onClick={() => handleEditeOnClick(item)}>
-                                                d1
+                                                <MdModeEdit size={20} />
                                             </button>
                                             <button onClick={() => handleDeleteOnClick(item)}>
-                                                <FaTrashAlt 
-                                                    size={16} />
+                                                s1
 
                                             </button>
                                         </div>
@@ -391,7 +392,7 @@ function Tags() {
                                         {((alterTag.referencia === item.referencia) && (alterTag.retorno !== item.retorno)) &&
                                             (<div className={styles.editarExcluir}>
                                                 <button onClick={patchTag}><FaCheckCircle size={17} /></button>
-                                                <button onClick={() => handleEditeOnClick(item)}>d2</button>
+                                                <button onClick={() => handleEditeOnClick(item)}><IoIosRemoveCircle size={20} /></button>
                                             </div>)
 
                                         }
