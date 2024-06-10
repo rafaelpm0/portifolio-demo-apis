@@ -5,7 +5,6 @@ import Loading from "../../../layout/Loading";
 import Message from "../../../layout/Message";
 import { FaTrashAlt } from "react-icons/fa";
 import { FaCheckCircle } from "react-icons/fa";
-import { IoIosRemoveCircle } from "react-icons/io";
 
 function Tags() {
 
@@ -392,7 +391,7 @@ function Tags() {
                                         {((alterTag.referencia === item.referencia) && (alterTag.retorno !== item.retorno)) &&
                                             (<div className={styles.editarExcluir}>
                                                 <button onClick={patchTag}><FaCheckCircle size={17} /></button>
-                                                <button onClick={() => handleEditeOnClick(item)}><IoIosRemoveCircle size={20} /></button>
+                                                <button onClick={() => handleEditeOnClick(item)}>d2</button>
                                             </div>)
 
                                         }
