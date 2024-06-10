@@ -1,8 +1,6 @@
 import styles from './Cadastrar.module.css';
 import { useState } from 'react';
 import Tags from './formsCadastrar.js/Tags';
-import ModeloEmail from './formsCadastrar.js/ModeloEmail';
-import Remetente from './formsCadastrar.js/Remetente';
 
 function Cadastrar() {
 
@@ -21,8 +19,6 @@ function Cadastrar() {
                 name="modeloEmail" onChange={handleCadastroChange}>
                     <option className={styles.option} value={0} key="vazio">Selecione um cadastro</option>
                     <option className={styles.option} value={1} key="Tags">Tags</option>
-                    <option className={styles.option} value={2} key="Email">Modelo Email</option>
-                    <option className={styles.option} value={3} key="Remetente">Remetente</option>
                 </select>
             </div>
 
