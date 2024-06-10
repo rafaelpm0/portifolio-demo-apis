@@ -1,6 +1,6 @@
 'http://localhost:5000';
 
-const url = 'https://projetoapijavascript-production.up.railway.app/';
+const url = 'https://projetoapijavascript-production.up.railway.app';
 const emailPadrao = {
     host: 'smtp.gmail.com',
     port: '587',
