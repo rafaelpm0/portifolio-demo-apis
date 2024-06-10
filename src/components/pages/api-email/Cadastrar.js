@@ -2,7 +2,6 @@ import styles from './Cadastrar.module.css';
 import { useState } from 'react';
 import Tags from './formsCadastrar.js/Tags';
 import ModeloEmail from './formsCadastrar.js/ModeloEmail';
-import Remetente from './formsCadastrar.js/Remetente';
 
 function Cadastrar() {
 
@@ -27,7 +26,6 @@ function Cadastrar() {
             <div>
                 {cadastro === '1' && (<Tags/>)}
                 {cadastro === '2' && (<ModeloEmail/>)}
-                {cadastro === '3' && (<Remetente/>)}
             </div>
 
 
