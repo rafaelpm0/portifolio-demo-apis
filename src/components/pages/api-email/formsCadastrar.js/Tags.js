@@ -55,9 +55,9 @@ function Tags() {
     }
 
     function handleIncluirTag() {
-
-        if (((Object.keys(tag).length !== 2) && (tagRetorno === false))   /*Regra para tag, um campo e não pode ser repetido. Regra para retorno
-        2 campos apenas*/
+        /*
+        if (((Object.keys(tag).length !== 2) && (tagRetorno === false))   //Regra para tag, um campo e não pode ser repetido. Regra para retorno  2 campos apenas
+       
         || ((Object.keys(tag).length !== 1) && (tagRetorno === true))) {
             setType("error");
             setMessage("Preencha todos os campos!");
@@ -104,6 +104,7 @@ function Tags() {
                 resetMessage();
 
             });
+            */
     }
 
     function atualizarNametags(data){
@@ -116,8 +117,8 @@ function Tags() {
                 setNameTags(list);
     }
 
-    useEffect(() => {
-
+    useEffect(/*() => {
+        
         const fetchTag = async () => {
 
             try {
@@ -137,7 +138,8 @@ function Tags() {
         }
         fetchTag();
 
-    }, [incluirExcluir, tagRetorno]);
+    }, [incluirExcluir, tagRetorno]
+    */);
     function handleCurrentTagChange(e) {
         setCurrentTag(e.target.value)
     };
