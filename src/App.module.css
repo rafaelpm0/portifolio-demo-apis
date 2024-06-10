@@ -1,0 +1,17 @@
+.body {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    min-height: calc(100vh - 138px);
+}
+
+.navbarFooter {
+        display: flex;
+        position: sticky;
+        justify-content: left;
+        align-items: center; 
+        background-color: #5E4F4B;
+        justify-content: left;
+        align-items: center;
+        padding-left: 5%;
+}

@@ -7,6 +7,6 @@
 html,
 body,
 #root {
-  background-color: #efefef;
   height: 100%;
+  width: 100%;
 }
