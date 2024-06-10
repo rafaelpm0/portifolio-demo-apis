@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import conf from '../../../../conf'
 import Loading from "../../../layout/Loading";
 import Message from "../../../layout/Message";
+import { MdModeEditOutline } from "react-icons/md";
 import { FaTrashAlt } from "react-icons/fa";
 import { FaCheckCircle } from "react-icons/fa";
 
@@ -378,7 +379,7 @@ function Tags() {
 
                                         <div className={styles.editarExcluir}>
                                             <button onClick={() => handleEditeOnClick(item)}>
-                                                d2
+                                                <MdModeEditOutline size={20} />
                                             </button>
                                             <button onClick={() => handleDeleteOnClick(item)}>
                                                 <FaTrashAlt 
