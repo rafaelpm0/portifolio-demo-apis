@@ -117,8 +117,9 @@ function Tags() {
                 setNameTags(list);
     }
 
-    useEffect(/*() => {
-        
+    /*
+    useEffect(() => {
+
         const fetchTag = async () => {
 
             try {
@@ -138,8 +139,7 @@ function Tags() {
         }
         fetchTag();
 
-    }, [incluirExcluir, tagRetorno]
-    */);
+    }, [incluirExcluir, tagRetorno]);*/
     function handleCurrentTagChange(e) {
         setCurrentTag(e.target.value)
     };

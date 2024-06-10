@@ -23,7 +23,7 @@ function Cadastrar() {
             </div>
 
             <div>
-                {cadastro === '1' && (<Tags/>)}d
+                {cadastro === '1' && (<Tags/>)}
             </div>
 
 
