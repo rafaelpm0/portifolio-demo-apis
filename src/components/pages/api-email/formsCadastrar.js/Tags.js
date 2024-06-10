@@ -52,10 +52,12 @@ function Tags() {
     }
 
     function resetMessage() {
+        /*
         const timer = setTimeout(() => {
             setMessage("");
         }, 2900);
         return () => clearTimeout(timer);
+        */
     }
 
     function handleIncluirTag() {
