@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import conf from '../../../../conf'
 import Loading from "../../../layout/Loading";
 import Message from "../../../layout/Message";
+import { MdModeEdit } from "react-icons/md";
+import { FaTrashAlt } from "react-icons/fa";
 import { FaCheckCircle } from "react-icons/fa";
 import { IoIosRemoveCircle } from "react-icons/io";
 
@@ -261,7 +263,7 @@ function Tags() {
                         checked={incluirExcluir} onChange={handleInExOnChange} />
 
                     <label htmlFor="incluir">
-                        <FaCheckCircle style={incluirExcluir ? { color: '#FFBB33' } : ""} />
+                        d6
                     </label>
 
                 </div>
@@ -272,7 +274,7 @@ function Tags() {
                         checked={!incluirExcluir} onChange={handleInExOnChange} />
 
                     <label htmlFor="excluir">
-                        <FaCheckCircle style={!incluirExcluir ? { color: '#FFBB33' } : ""} />
+                        d7
                     </label>
 
                 </div>
@@ -290,7 +292,7 @@ function Tags() {
                                 checked={tagRetorno} onChange={handleTagRetOnChange} />
 
                             <label htmlFor="tag">
-                                <FaCheckCircle style={tagRetorno ? { color: '#FFBB33' } : ""} />
+                                d8
                             </label>
 
                         </div>
@@ -301,7 +303,7 @@ function Tags() {
                                 checked={!tagRetorno} onChange={handleTagRetOnChange} />
 
                             <label htmlFor="retorno">
-                                <FaCheckCircle style={!tagRetorno ? { color: '#FFBB33' } : ""} />
+                               d9
                             </label>
 
                         </div>
@@ -378,18 +380,19 @@ function Tags() {
 
                                         <div className={styles.editarExcluir}>
                                             <button onClick={() => handleEditeOnClick(item)}>
-                                                
+                                                d1
                                             </button>
                                             <button onClick={() => handleDeleteOnClick(item)}>
-                                            
+                                                d2
+
                                             </button>
                                         </div>
 
 
                                         {((alterTag.referencia === item.referencia) && (alterTag.retorno !== item.retorno)) &&
                                             (<div className={styles.editarExcluir}>
-                                                <button onClick={patchTag}><FaCheckCircle size={17} /></button>
-                                                <button onClick={() => handleEditeOnClick(item)}><IoIosRemoveCircle size={20} /></button>
+                                                <button onClick={patchTag}>d3</button>
+                                                <button onClick={() => handleEditeOnClick(item)}>d4</button>
                                             </div>)
 
                                         }
