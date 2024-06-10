@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import conf from '../../../../conf'
 import Loading from "../../../layout/Loading";
 import Message from "../../../layout/Message";
-import { GiCancel } from "react-icons/gi";
+import { FaMinusCircle } from "react-icons/fa";
 import { FaPencilAlt } from "react-icons/fa";
 import { FaTrashAlt } from "react-icons/fa";
 import { FaCheckCircle } from "react-icons/fa";
@@ -380,7 +380,7 @@ function Tags() {
 
                                         <div className={styles.editarExcluir}>
                                             <button onClick={() => handleEditeOnClick(item)}>
-                                                <FaPencilAlt  size={20} />
+                                                <FaPencilAlt  size={18} />
                                             </button>
                                             <button onClick={() => handleDeleteOnClick(item)}>
                                                 <FaTrashAlt 
@@ -392,8 +392,8 @@ function Tags() {
 
                                         {((alterTag.referencia === item.referencia) && (alterTag.retorno !== item.retorno)) &&
                                             (<div className={styles.editarExcluir}>
-                                                <button onClick={patchTag}><FaCheckCircle size={17} /></button>
-                                                <button onClick={() => handleEditeOnClick(item)}>< GiCancel size={17} /></button>
+                                                <button onClick={patchTag}><FaCheckCircle size={16} /></button>
+                                                <button onClick={() => handleEditeOnClick(item)}>< FaMinusCircle size={17} /></button>
                                             </div>)
 
                                         }
