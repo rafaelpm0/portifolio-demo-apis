@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import conf from '../../../../conf'
 import Loading from "../../../layout/Loading";
 import Message from "../../../layout/Message";
-import { FaTrashAlt } from "react-icons/fa";
 import { FaCheckCircle } from "react-icons/fa";
 import { IoIosRemoveCircle } from "react-icons/io";
 
@@ -382,9 +381,7 @@ function Tags() {
                                                 
                                             </button>
                                             <button onClick={() => handleDeleteOnClick(item)}>
-                                                <FaTrashAlt 
-                                                    size={16} />
-
+                                            
                                             </button>
                                         </div>
 
