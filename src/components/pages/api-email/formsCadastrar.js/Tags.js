@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import conf from '../../../../conf'
 import Loading from "../../../layout/Loading";
 import Message from "../../../layout/Message";
+import { GiCancel } from "react-icons/gi";
 import { FaPencilAlt } from "react-icons/fa";
 import { FaTrashAlt } from "react-icons/fa";
 import { FaCheckCircle } from "react-icons/fa";
@@ -392,7 +393,7 @@ function Tags() {
                                         {((alterTag.referencia === item.referencia) && (alterTag.retorno !== item.retorno)) &&
                                             (<div className={styles.editarExcluir}>
                                                 <button onClick={patchTag}><FaCheckCircle size={17} /></button>
-                                                <button onClick={() => handleEditeOnClick(item)}>d1</button>
+                                                <button onClick={() => handleEditeOnClick(item)}>< GiCancel size={17} /></button>
                                             </div>)
 
                                         }
