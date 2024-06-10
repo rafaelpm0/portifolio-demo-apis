@@ -23,9 +23,7 @@ function Cadastrar() {
             </div>
 
             <div>
-                {cadastro === '1' && (<Tags/>)}
-                {cadastro === '2' && (<ModeloEmail/>)}
-                {cadastro === '3' && (<Remetente/>)}
+                {cadastro === '1' && (<Tags/>)}d
             </div>
 
 
