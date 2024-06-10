@@ -379,8 +379,10 @@ function Tags() {
                                         }
 
                                         <div className={styles.editarExcluir}>
-                                            <button onClick={() => handleEditeOnClick(item)}>
-                                                <MdModeEdit size={20} />
+                                            <button onClick={() => handleEditeOnClick(item)}>b1
+                                               {
+                                                /*<MdModeEdit size={20} /> */
+                                               } 
                                             </button>
                                             <button onClick={() => handleDeleteOnClick(item)}>
                                                 <FaTrashAlt 
