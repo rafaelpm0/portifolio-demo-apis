@@ -8,21 +8,21 @@ import { FaTrashAlt } from "react-icons/fa";
 import { FaCheckCircle } from "react-icons/fa";
 import { FaMinusCircle } from "react-icons/fa";
 
-function Tags() {
+function Rementente() {
 
     const [incluirExcluir, setIncluirExcluir] = useState(true);
     const [isLoading, setIsLoading] = useState(false);
 
     const [remetente, setRementente] = useState({}); // quando altera no incluir
     const [contentRemet, setContentRemet] = useState([]);
-    const [currentRemet, setCurrentRemet] = useState();
+    const [currentRemet, setCurrentRemet] = useState({});
     const [edite, setEdite] = useState(false);
     const [editeButton, setEditeButton] = useState(false);
     const [alterRementente, setAlterRementente] = useState({});
 
 
     const [message, setMessage] = useState('');
-    const [type, setType] = useState();
+    const [type, setType] = useState("");
 
     function handleInExOnChange(e) {
         setIncluirExcluir(e.target.value === 'true');
@@ -388,4 +388,4 @@ function Tags() {
     );
 }
 
-export default Tags;
+export default Rementente;
