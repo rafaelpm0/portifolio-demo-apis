@@ -1,6 +1,6 @@
 import styles from './Cadastrar.module.css';
 import { useState } from 'react';
-import Tags from './formsCadastrar.js/Tags';
+
 
 function Cadastrar() {
 
@@ -23,7 +23,7 @@ function Cadastrar() {
             </div>
 
             <div>
-                {cadastro === '1' && (<Tags/>)}
+               
             </div>
 
 
