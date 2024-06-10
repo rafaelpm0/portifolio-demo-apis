@@ -114,6 +114,7 @@ function Tags() {
     }
 
     function atualizarNametags(data){
+        /*
                 let list = [];
                 data.forEach((item) => {
                     if (!list.includes(item.nome)) {
@@ -121,6 +122,7 @@ function Tags() {
                     }
                   });
                 setNameTags(list);
+                */
     }
 
     /*
@@ -147,22 +149,28 @@ function Tags() {
 
     }, [incluirExcluir, tagRetorno]);*/
     function handleCurrentTagChange(e) {
+        /*
         setCurrentTag(e.target.value)
+        */
     };
 
     function handleEditeOnClick(item) {
+        /*
         if (item.referencia === alterTag.referencia) {
             setAlterTag("")
             return;
         }
         setAlterTag(item);
+        */
     }
 
     function handleEditeOnChange(e) {
+        /*
         setAlterTag((prevData) => ({
             ...prevData,
             retorno: e.target.value
         }))
+        */
     }
 
     function patchTag() {
