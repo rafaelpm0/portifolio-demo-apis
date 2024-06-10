@@ -331,10 +331,11 @@ function Tags() {
                                     <label htmlFor="">Nome: </label>
                                     <select name="nome" id="nome" onChange={handleTaInsertgOnChange}>
                                         <option key={"nome"} value={""}>Selecione uma tag</option>
-                                        {
+                                        {   /*
                                             nameTags.map((item) => (
                                                 <option key={item} value={item}>{item}</option>
                                             ))
+                                            */
                                         }
                                     </select>
                                 </div>
@@ -359,15 +360,16 @@ function Tags() {
                         <label htmlFor="">Selecione a tag: </label>
                         <select name="tag" id="tag" onChange={handleCurrentTagChange}>
                             <option key={""} value={""}>Selecione uma tag</option>
-                            {
+                            {   /*
                                 nameTags.map((item) => (
                                     <option key={item} value={item}>{item}</option>
                                 ))
+                                */
                             }
                         </select>
                     </div>
                     <div>
-                        {
+                        {/*
                             contentTag.map((item) =>
                                 (item.nome === currentTag) && (
                                     <div className={`${styles.entradas} ${styles.b} ${styles.c}`}>
@@ -405,7 +407,7 @@ function Tags() {
 
                                     </div>)
                             )
-                        }
+                                    */ }
                     </div>
 
                 </div>
