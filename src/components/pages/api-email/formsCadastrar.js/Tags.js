@@ -262,7 +262,7 @@ function Tags() {
                         checked={incluirExcluir} onChange={handleInExOnChange} />
 
                     <label htmlFor="incluir">
-                        d6
+                        <FaCheckCircle style={incluirExcluir ? { color: '#FFBB33' } : ""} />
                     </label>
 
                 </div>
@@ -273,7 +273,7 @@ function Tags() {
                         checked={!incluirExcluir} onChange={handleInExOnChange} />
 
                     <label htmlFor="excluir">
-                        d7
+                        <FaCheckCircle style={!incluirExcluir ? { color: '#FFBB33' } : ""} />
                     </label>
 
                 </div>
@@ -291,7 +291,7 @@ function Tags() {
                                 checked={tagRetorno} onChange={handleTagRetOnChange} />
 
                             <label htmlFor="tag">
-                                d8
+                                <FaCheckCircle style={tagRetorno ? { color: '#FFBB33' } : ""} />
                             </label>
 
                         </div>
@@ -302,7 +302,7 @@ function Tags() {
                                 checked={!tagRetorno} onChange={handleTagRetOnChange} />
 
                             <label htmlFor="retorno">
-                               d9
+                                <FaCheckCircle style={!tagRetorno ? { color: '#FFBB33' } : ""} />
                             </label>
 
                         </div>
@@ -382,7 +382,8 @@ function Tags() {
                                                 d1
                                             </button>
                                             <button onClick={() => handleDeleteOnClick(item)}>
-                                                d2
+                                                <FaTrashAlt 
+                                                    size={16} />
 
                                             </button>
                                         </div>
@@ -390,8 +391,8 @@ function Tags() {
 
                                         {((alterTag.referencia === item.referencia) && (alterTag.retorno !== item.retorno)) &&
                                             (<div className={styles.editarExcluir}>
-                                                <button onClick={patchTag}>d3</button>
-                                                <button onClick={() => handleEditeOnClick(item)}>d4</button>
+                                                <button onClick={patchTag}><FaCheckCircle size={17} /></button>
+                                                <button onClick={() => handleEditeOnClick(item)}><IoIosRemoveCircle size={20} /></button>
                                             </div>)
 
                                         }
