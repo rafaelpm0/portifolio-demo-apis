@@ -160,6 +160,7 @@ function Tags() {
     }
 
     function patchTag() {
+        /*
         setMessage("");
         setType("");
         const pTag = async () => {
@@ -197,6 +198,7 @@ function Tags() {
 
         }
         pTag();
+        */
     }
 
     function handleDeleteOnClick(tag) { /*
