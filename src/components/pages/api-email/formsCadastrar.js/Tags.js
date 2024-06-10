@@ -370,7 +370,7 @@ function Tags() {
 
             {!incluirExcluir && (
                 <div>
-                    <div className={styles.entradas}>
+                    {/**                    <div className={styles.entradas}>
                         <label htmlFor="">Selecione a tag: </label>
                         <select name="tag" id="tag" onChange={handleCurrentTagChange}>
                             <option key={""} value={""}>Selecione uma tag</option>
@@ -378,10 +378,11 @@ function Tags() {
                                 nameTags.map((item) => (
                                     <option key={item} value={item}>{item}</option>
                                 ))
-                                */
+                                
                             }
-                        </select>
-                    </div>
+                            </select>
+                        </div> */}
+
                     <div>
                         {/*
                             contentTag.map((item) =>
