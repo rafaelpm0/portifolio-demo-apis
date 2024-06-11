@@ -1,11 +1,14 @@
 .body {
-    width: 100%;
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    min-height: calc(100vh - 138px);
+    min-height: calc(100% - 138px - 6.18%);
     background-color: #EDC6BE;
     color: #5e4f4b;
+    padding-left: 8%;
+    padding-right: 8%;
+}
+
+.body {
+    padding-top: 3%;
 }
 
 .navbarFooter {
