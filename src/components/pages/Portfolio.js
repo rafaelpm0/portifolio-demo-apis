@@ -3,11 +3,10 @@ import perfil from '../../img/perfil.jpg'
 function Portifolio() {
 
     return (
-        <div className={styles.portifolio}>
-
+        <div>
             <div className={styles.introduction}>
                 <img src={perfil} alt="Foto de perfil" />
-                <div className={styles.intItems}>
+                <div>
                     <p>Portfolio de apresentação:</p>
                     <p>Rafael Pinho Medeiros, 26 anos</p>
                     <p>Ciência da Computação - UNIVALI | Ciências Contábeis - UNISUL</p>
