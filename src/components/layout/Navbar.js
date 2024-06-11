@@ -18,7 +18,7 @@ function NavBar({ classname }) {
             <ul className={`${styles.menu}`}>
 
                 <li className={styles.item}>
-                    <Link to='/'>PORTIFOLIO</Link>
+                    <Link to='/'>PORTFOLIO</Link>
                 </li>
                 <li className={`${styles.item}`}
                     onMouseEnter={() => setShowOptions(true)}

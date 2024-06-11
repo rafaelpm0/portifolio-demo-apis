@@ -1,8 +1,11 @@
 .body {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     min-height: calc(100vh - 138px);
+    background-color: #EDC6BE;
+    color: #5e4f4b;
 }
 
 .navbarFooter {
