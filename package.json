@@ -10,14 +10,19 @@
     "react-dom": "^18.2.0",
     "react-icons": "^5.0.1",
     "react-router-dom": "^6.22.0",
+<<<<<<< HEAD
+    "react-scripts": "^3.0.1",
+    "web-vitals": "^2.1.4"
+=======
     "react-scripts": "^5.0.1",
     "rimraf": "^5.0.7",
     "web-vitals": "^2.1.4",
     "webpack-dev-server": "^5.0.4"
+>>>>>>> 738a3171b725223fea09c886ef613eb142e51798
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "CI=false react-scripts build",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -38,6 +43,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+<<<<<<< HEAD
+=======
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
@@ -51,5 +58,6 @@
     "eslint": {
       "file-entry-cache": "^8.0.0"
     }
+>>>>>>> 738a3171b725223fea09c886ef613eb142e51798
   }
 }
