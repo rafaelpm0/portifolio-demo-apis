@@ -254,7 +254,7 @@ function Tags() {
     return (
         <div className={styles.tags}>
 
-            <div className={styles.incluirExcluir}>
+            <div className={styles.options}>
 
                 <div className={styles.elementInEx}>
 
@@ -284,7 +284,7 @@ function Tags() {
             {incluirExcluir && (
 
                 <div>
-                    <div class={styles.tagRetorno}>
+                    <div class={styles.options}>
                         <div className={styles.elementInEx}>
 
                             <label htmlFor="tag"> Tag </label>
@@ -309,7 +309,7 @@ function Tags() {
                         </div>
                     </div>
 
-                    <div className={styles.alinhamentoEntradas}>
+                    <div>
                         <p className={styles.entradas}>Informe: </p>
 
 

@@ -13,25 +13,24 @@ function Cadastrar() {
         setCadastro(info);
     }
     return (
-        <div className={styles.cadastrar}>
-            <div>
+        <div >
+            <div className={styles.cadastrar}>
                 <label htmlFor="modeloEmail"> CADASTRAR: </label>
                 <select id="modeloEmail"
                     name="modeloEmail" onChange={handleCadastroChange}>
-                    <option className={styles.option} value={0} key="vazio">Selecione um cadastro</option>
-                    <option className={styles.option} value={1} key="Tags">Tags</option>
-                    <option className={styles.option} value={2} key="Email">Modelo Email</option>
-                    <option className={styles.option} value={3} key="Remetente">Remetente</option>
+                    <option  value={0} key="vazio">Selecione um cadastro</option>
+                    <option  value={1} key="Tags">Tags</option>
+                    <option  value={2} key="Email">Modelo Email</option>
+                    <option  value={3} key="Remetente">Remetente</option>
                 </select>
             </div>
+
             <div>
             {cadastro === '1' && (<Tags />)}
             {cadastro === '2' && (<ModeloEmail />)}
             {cadastro === '3' && (<Remetente />)}
             </div>
-
-
-
+            
         </div>);
 }
 

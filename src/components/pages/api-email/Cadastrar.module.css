@@ -1,10 +1,8 @@
 .cadastrar {
     align-items: center;
-    border: 2px solid black;
-}
-
-.cadastro{
-    margin-bottom: 3%;
+    display: flex;
+    align-items: center;
+    padding-bottom: 2vh;
 }
 
 .cadastrar label{
@@ -15,8 +13,7 @@
 .cadastrar select {
     border: none;
     outline: none;
-    margin: 0 0 0 10px;
-    padding: 6px;
+    padding: 5px;
     border-radius: 10px;
     font-size: 1.15em;
     background-color: #5e4f4b65;
@@ -24,12 +21,12 @@
     font-weight: bolder;
 }
 
-.option{
+.cadastrar option{
     background-color: #5e4f4b65;
     color: #fffffff2;
     font-weight: bolder;
 }
-.option:checked{
+.cadastrar option:checked{
     background-color: #5e4f4b;
     color: #FFBB33;
 }

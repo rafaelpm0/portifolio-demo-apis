@@ -1,22 +1,18 @@
 .tags{
-    justify-content: left;
-    margin-left: 2%;
+    margin-left: 1vw;
 }
 
-.incluirExcluir{
+.options{
     display: flex;
     justify-content: left;  
     margin-bottom: 2%;
-    font-size: 1.6em;
-    
+    font-size: 1.5em;
 }
-.tagRetorno{
-    display: flex;
-    justify-content: left;  
-    margin-bottom: 1%;
-    font-size: 1.4em;
-    
+
+.options :hover{
+    color: #FFBB33;
 }
+
 .elementInEx{
     display: flex;
     align-items: center;
@@ -26,10 +22,6 @@
     font-weight: bolder;
     padding: 10px 10px 10px 10px; 
     border-radius: 10px;
-}
-
-.incluirExcluir :hover{
-    color: #FFBB33;
 }
 
 .elementInEx input{
@@ -54,18 +46,11 @@
     border-radius: 10px;
 }
 
-.alinhamentoEntradas{
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
-
-}
-
 .entradas {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 450px;
+    width: 40vw;
     border: none;
     border-radius: 10px;
     font-size: 1.2em;
@@ -78,21 +63,10 @@
     margin-bottom: 1%;
 }
 
-.b {
-    width: 500px;
-}
-
-.c input{
-    background-color: #f09f88aa !important;
-    color: fffffff2 !important;
-    cursor: pointer !important;
-}
-
 .entradas label{
     margin-right: 5px;
     
 }
-
 .entradas input,
 .entradas select,
 .entradas p {
@@ -113,23 +87,10 @@
     border: 2px solid #5e4f4b65;
 }
 
-.message{
-    position: fixed;
-    top: 20%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 250px;
-    height: 125px;
-    font-weight: bolder;
-    font-size: 1.5em;
-    opacity: 70%;
-}
-
 .button {
+    width: 41vw;
     display: flex;
-    justify-content: left;
-    margin-left: 22%;
-    padding: 5px;
+    justify-content: right;
 }
 
 .button button {
@@ -147,8 +108,16 @@
     color: #FFBB33;
 }
 
-.d {
-    color: #FFBB33;
+.message{
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 250px;
+    height: 125px;
+    font-weight: bolder;
+    font-size: 1.5em;
+    opacity: 70%;
 }
 
 .editarExcluir{
