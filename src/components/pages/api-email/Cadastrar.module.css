@@ -1,28 +1,18 @@
 .cadastrar {
-    width: 100%;
-    margin: 0;
-    padding-left: 10%;
-    padding-top: 3%;
-    background-color: #EDC6BE;
-    color: #5e4f4b;
+    align-items: center;
+    border: 2px solid black;
 }
 
 .cadastro{
     margin-bottom: 3%;
 }
 
-.centro{
-    display: flex;
-    align-items: center;
-    margin-bottom: 1em;
-}
-
-.label{
-    font-size: 2.2em;
+.cadastrar label{
+    font-size: 2em;
     font-weight: bolder;
 }
 
-.select {
+.cadastrar select {
     border: none;
     outline: none;
     margin: 0 0 0 10px;
@@ -35,7 +25,6 @@
 }
 
 .option{
-    
     background-color: #5e4f4b65;
     color: #fffffff2;
     font-weight: bolder;

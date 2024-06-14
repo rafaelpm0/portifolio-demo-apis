@@ -1,68 +1,57 @@
-.portifolio{
-    width: 100%;
-    margin: 0;
-    padding-left: 10%;
-    padding-top: 3%;
-    background-color: #EDC6BE;
-    color: #5e4f4b;
-    padding-bottom: 59px;
+.introduction{
+    display: flex;
+    align-items: center;
+    margin-bottom: 2%;
+    font-size: 2em;
+    font-weight: bolder;
+    text-transform: uppercase;
 }
 
-.img {
+.introduction img{
+    margin-right: 2%;
     width: 175px;
     height: auto;
     border-radius: 50%;
 }
-
-.introduction{
-    display: flex;
-    justify-content: left;
-    align-items: center;
+.introduction p {
+    margin-bottom: 0.5%;
 }
 
-.intItems {
-   margin-left: 1.5%;
-   font-weight: bolder;
-   font-size: 2em;
-   text-transform: uppercase;
-}
-
-.resume{
-    margin-left: 4.5%;
-    margin-top: 2%;
-    margin-bottom: 2%;
+.apresentacao{
+    margin-bottom: 3%;
     font-weight: bolder;
-}
-
-.title {
-    font-size: 1.85em;
-    font-weight: bolder;
-    margin-bottom: 1%;
-}
-
-.content{
-    margin-left: 1.5%;
-    margin-right: 10%;
     text-align: justify;
-    font-size: 1.15em;
+    font-size: 1.20em;
+}
+
+.apresentacao p:first-of-type {
+    font-size: 1.85em;
+    margin-bottom: 1%;
 }
 
 .list {
-   list-style: none;  
-   margin-left: 5%;
-   margin-right: 10%;
-}
+    list-style: none;  
+    margin-right: 50%;
+    margin-bottom: 3%;
+    
+ }
 
-.liTitle {
-    font-size: 1.50em;
-    font-weight: bolder;
+ .list li{
+    margin-bottom: 3%;
+ }
+
+.list li p{
+    text-align: justify;
     margin-bottom: 1%;
 }
 
-.liContent{
+.list p:first-of-type {
+   font-weight: bolder;
+   font-size: 1.4em;
+}
+.list p:not(:first-of-type){
     margin-left: 1.5%;
-    margin-right: 10%;
-    text-align: justify;
-    font-size: 0.8em;
-    font-weight:500;
+    font-size: 1.1em;
+    font-weight:bold;
+    opacity: 85%;
 }

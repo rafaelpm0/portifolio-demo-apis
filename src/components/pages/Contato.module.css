@@ -1,24 +1,19 @@
-.contact{
-    width: 100%;
-    background-color: #EDC6BE
-}
+.contato ul{
+    list-style-type: none;
 
-.img {
-    width: 8vh;
-    height: auto;
-    margin-right: 20px;
 }
-
-.list {
-    margin-left: 12%;
-    margin-top: 4%;
-}
-
-.item {
+.contato ul li {
     display: flex;
-    justify-content: left;
     align-items: center;
-    font-size: larger;
+    
+}
+
+.contato ul li p{
+    font-size: 1.5em;
+    margin-left: 2%;
     font-weight: bolder;
-    color: #5e4f4b;
+}
+
+.contato ul li img {
+    height: 4.5em;
 }

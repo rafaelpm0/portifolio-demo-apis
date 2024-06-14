@@ -1,4 +1,7 @@
-const url = 'https://projetoapijavascript-production.up.railway.app';
+'http://localhost:5000';
+'https://projetoapijavascript-production.up.railway.app'
+
+const url = 'http://localhost:5000';
 const emailPadrao = {
     host: 'smtp.gmail.com',
     port: '587',
@@ -6,4 +9,5 @@ const emailPadrao = {
     pass: 'zobxlpnljrvhxnmz'
 };
 
-export default {url, emailPadrao};
+const exportar = {url, emailPadrao}
+export default exportar;

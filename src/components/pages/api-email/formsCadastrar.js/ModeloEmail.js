@@ -3,10 +3,10 @@ import { useEffect, useState } from "react";
 import conf from '../../../../conf'
 import Loading from "../../../layout/Loading";
 import Message from "../../../layout/Message";
-import { MdModeEdit, } from "react-icons/md";
+import { FaPencilAlt } from "react-icons/fa";
 import { FaTrashAlt } from "react-icons/fa";
-import { IoIosCheckmarkCircle } from "react-icons/io";
-import { IoIosRemoveCircle } from "react-icons/io";
+import { FaCheckCircle } from "react-icons/fa";
+import { FaMinusCircle } from "react-icons/fa";
 
 function Tags() {
 
@@ -294,7 +294,7 @@ function handleIncluirTag(idEmail, lista) {
                         checked={incluirExcluir} onChange={handleInExOnChange} />
 
                     <label htmlFor="incluir">
-                        <IoIosCheckmarkCircle style={incluirExcluir ? { color: '#FFBB33' } : ""} />
+                        <FaCheckCircle style={incluirExcluir ? { color: '#FFBB33' } : ""} />
                     </label>
 
                 </div>
@@ -304,7 +304,7 @@ function handleIncluirTag(idEmail, lista) {
                     <input type="checkbox" id="excluir" value={false}
                         checked={!incluirExcluir} onChange={handleInExOnChange} />
                     <label htmlFor="excluir">
-                        <IoIosCheckmarkCircle style={!incluirExcluir ? { color: '#FFBB33' } : ""} />
+                        <FaCheckCircle style={!incluirExcluir ? { color: '#FFBB33' } : ""} />
                     </label>
 
                 </div>
@@ -384,7 +384,7 @@ function handleIncluirTag(idEmail, lista) {
 
                             <div className={`${styles.editarExcluir}`}>
                                 <button onClick={handleEditeOnClick}>
-                                    <MdModeEdit size={22} />
+                                    <FaPencilAlt size={22} />
                                 </button>
                                 <button>
                                     <FaTrashAlt onClick={() => handleDeleteOnClick(currentModeloEmail)}
@@ -395,8 +395,8 @@ function handleIncluirTag(idEmail, lista) {
 
                             {(editeButton) && (
                                 <div className={styles.editarExcluir}>
-                                    <button onClick={patchModeloEmail}><IoIosCheckmarkCircle size={22} /></button>
-                                    <button onClick={handleEditeOnClick}><IoIosRemoveCircle size={22} /></button>
+                                    <button onClick={patchModeloEmail}><FaCheckCircle size={22} /></button>
+                                    <button onClick={handleEditeOnClick}><FaMinusCircle size={22} /></button>
                                 </div>)
 
                             }
@@ -448,6 +448,8 @@ function handleIncluirTag(idEmail, lista) {
                                                             tagsEmail.map((element, index) => {
                                                                 if (parseInt(currentModeloEmail, 10) === element.id_modeloEmail) {
                                                                     return <li key={index}>{element.nome_tag} | </li>;
+                                                                }else{
+                                                                    return null
                                                                 }
                                                             })
                                                         }

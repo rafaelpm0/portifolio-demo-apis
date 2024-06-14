@@ -3,10 +3,10 @@ import { useEffect, useState } from "react";
 import conf from '../../../../conf'
 import Loading from "../../../layout/Loading";
 import Message from "../../../layout/Message";
-import { MdModeEdit, } from "react-icons/md";
+import { FaMinusCircle } from "react-icons/fa";
+import { FaPencilAlt } from "react-icons/fa";
 import { FaTrashAlt } from "react-icons/fa";
 import { FaCheckCircle } from "react-icons/fa";
-import { IoIosRemoveCircle } from "react-icons/io";
 
 function Tags() {
 
@@ -380,10 +380,10 @@ function Tags() {
 
                                         <div className={styles.editarExcluir}>
                                             <button onClick={() => handleEditeOnClick(item)}>
-                                                <MdModeEdit size={20} />
+                                                <FaPencilAlt  size={18} />
                                             </button>
-                                            <button>
-                                                <FaTrashAlt onClick={() => handleDeleteOnClick(item)}
+                                            <button onClick={() => handleDeleteOnClick(item)}>
+                                                <FaTrashAlt 
                                                     size={16} />
 
                                             </button>
@@ -392,8 +392,8 @@ function Tags() {
 
                                         {((alterTag.referencia === item.referencia) && (alterTag.retorno !== item.retorno)) &&
                                             (<div className={styles.editarExcluir}>
-                                                <button onClick={patchTag}><FaCheckCircle size={17} /></button>
-                                                <button onClick={() => handleEditeOnClick(item)}><IoIosRemoveCircle size={20} /></button>
+                                                <button onClick={patchTag}><FaCheckCircle size={16} /></button>
+                                                <button onClick={() => handleEditeOnClick(item)}>< FaMinusCircle size={17} /></button>
                                             </div>)
 
                                         }

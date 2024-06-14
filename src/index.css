@@ -1,12 +1,13 @@
 * {
-  padding: 0;
-  margin: 0;
   font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 html,
 body,
 #root {
-  background-color: #efefef;
   height: 100%;
+  width: 100%;
+  
 }

@@ -1,0 +1,23 @@
+.body {
+    display: flex;
+    min-height: calc(100% - 138px - 6.18%);
+    background-color: #EDC6BE;
+    color: #5e4f4b;
+    padding-left: 8%;
+    padding-right: 8%;
+}
+
+.body {
+    padding-top: 3%;
+}
+
+.navbarFooter {
+        display: flex;
+        position: sticky;
+        justify-content: left;
+        align-items: center; 
+        background-color: #5E4F4B;
+        justify-content: left;
+        align-items: center;
+        padding-left: 5%;
+}
